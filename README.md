@@ -1,2 +1,0 @@
-# wsacademy
-musical class 
