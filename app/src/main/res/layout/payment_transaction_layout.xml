@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent" android:background="@color/background"
+            android:layout_height="match_parent">
+<!--
+<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="16dp">
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4dp"
+	          android:text="@string/name" android:textStyle="normal" android:textSize="20sp" android:id="@+id/pay_name"/>
+
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4dp"
+	          android:text="@string/Instruments" android:textStyle="italic" android:textSize="15sp" android:id="@+id/pay_instrument"/>
+<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+	<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/naira" android:layout_gravity="center"/>
+
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4dp"
+	          android:text="@string/cost" android:textStyle="bold" android:textSize="20sp" android:id="@+id/pay_cost"/>
+</LinearLayout>
+</LinearLayout>
+-->
+
+
+
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"  android:layout_centerInParent="true"
+              android:orientation="vertical"   android:layout_marginLeft="4dp" android:layout_marginRight="4dp">
+	<EditText android:layout_width="match_parent"
+	          android:layout_height="wrap_content"
+	          android:hint="@string/card_number"
+	          android:gravity="start"
+              android:inputType="number"
+	          android:minEms="2"
+              android:id="@+id/cardNumber"/>
+
+	<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+			<EditText android:layout_width="wrap_content" android:hint="@string/mm" android:minEms="4"
+			          android:inputType="number" android:id="@+id/expMonth"
+			          android:layout_height="wrap_content"  android:maxLength="2" android:layout_gravity="right" />
+
+
+		<EditText android:layout_width="wrap_content" android:hint="@string/yyyy" android:minEms="4"
+		          android:inputType="number" android:id="@+id/expYear" android:layout_marginLeft="4dp"
+		          android:layout_height="wrap_content" android:maxLength="4" android:layout_gravity="right"
+		          android:layout_marginStart="4dp"/>
+
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+		<EditText android:layout_width="wrap_content" android:maxLength="3" android:id="@+id/cvvNumber"
+		          android:layout_height="wrap_content" android:hint="@string/cvv" />
+
+		<TextView android:layout_width="wrap_content" android:textStyle="italic" android:fontFamily="serif"
+		          android:layout_height="wrap_content" android:text="@string/cvv_sample" android:layout_marginLeft="8dp"/>
+	</LinearLayout>
+
+
+	<TextView android:layout_width="wrap_content" android:textStyle="italic" android:fontFamily="serif"
+	          android:layout_height="wrap_content" android:text="@string/no_transaction_yet" android:layout_gravity="center"
+	            android:layout_marginTop="16dp"
+	          />
+</LinearLayout>
+
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/payPaystack"
+        android:text="@string/pay" android:layout_alignParentBottom="true" android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" android:background="@color/colorPrimary" android:layout_marginRight="8dp"
+        android:layout_marginEnd="4dp" android:layout_marginBottom="8dp" android:minEms="4"/>
+	<ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content"
+	android:layout_centerInParent="true" android:visibility="gone" android:id="@+id/paystackProgress"
+	/>
+</RelativeLayout>

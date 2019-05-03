@@ -1,0 +1,169 @@
+<resources>
+    <string name="app_name">Wsacademy</string>
+
+    <!-- Main -->
+    <string name="join_class">Join a Class</string>
+    <string name="BootCamp">Boot camp</string>
+    <string name="Feeds">Feeds</string>
+    <string name="Curriculum">Curriculum</string>
+
+    <string name="developer">Developer</string>
+
+    <string name="classDesc">Click and begin your journey into the world of music</string>
+    <string name="bootCampDesc">Reserve a seat at our annual musical Bootcamp</string>
+    <string name="feedDesc">Get the latest updates from our team</string>
+    <string name="CurriculumDesc">Order of events for our classes</string>\
+
+
+
+
+    <!-- sign in activity-->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="signinButton">Sign in</string>
+    <string name="signupButton">Sign up</string>
+
+    <!-- classes -->
+    <string name="applicant">Applicant Information</string>
+    <string name="PickInstrument">Pick An Instrument</string>
+    <string name="owner">Do you own one</string>
+
+
+    <string name="firstname">First name</string>
+    <string name="lastname">Last name</string>
+    <string name="age">Age</string>
+    <string name="address">Address</string>
+    <string name="Instruments">Instruments</string>
+    <string name="classProceed">Proceed</string>
+    <string name="provide">Provide Instrument</string>
+    <string name="price">Price</string>
+    <string name="cost">Cost</string>
+    <string name="phoneNumber">Phone Number</string>
+    <string name="health">Health issues(if any)</string>
+    <string name="name">Name</string>
+
+
+
+    <array name="pick_instrument">
+        <item name="violin">Violin</item>
+        <item name="Drums">Drums</item>
+        <item name="sax">Saxophone</item>
+        <item name="Keyboard">Keyboard</item>
+        <item name="Guitar">Guitar</item>
+    </array>
+    <array name="no_instrument">
+        <item name="yes">Yes</item>
+        <item name="no">No</item>
+    </array>
+
+
+
+    <!-- curriculum beginner-->
+    <string name="Introductory_class">Introductory Class</string>
+    <string name="Duration">Duration:</string>
+    <string name="no_lessons">10 Lessons</string>
+    <string name="Location">Location:</string>
+    <string name="beautifulGate">Venue: 7A IyaOloye Crescent,idioroko.Maryland</string>
+    <string name="Time">Time:</string>
+    <string name="day">10am-1pm:Saturdays</string>
+    <string name="Lesson">Lessons</string>
+    <string name="concept">Concept:</string>
+    <string name="title">Title:</string>
+    <string name="brief">creation of original musical works and the study of the techniques and repertoire of composers from seasoned professionals. Students will study, discuss, and create music on their own, in semiprivate and/or private lessons</string>
+    <!--intermediate-->
+    <string name="intermediate">Intermediate</string>
+
+    <!--advance-->
+    <string name="Advance">Advance</string>
+
+
+    <string name="menuTitle1">Email</string>
+    <string name="menuFeed">Feed</string>
+    <string name="menuLock">Lock</string>
+    <string name="signout">SignOut</string>
+
+    <!-- popups-->
+    <string name="subjects">Subject</string>
+    <string name="text">Message</string>
+
+    <string name="score">Score</string>
+    <string name="theory">Theory</string>
+    <string name="Melody">Melody</string>
+    <string name="Practical">Practical</string>
+    <string name="Exceptional">Elect</string>
+
+	<string name="hello_blank_fragment">Hello blank fragment</string>
+
+<!-- slides-->
+
+   <string name="title_slide_1">Einsteins Symphonies </string>
+    <string name="desc_slide_1">History has it that einstein the father of modern day science was an excellent violinist. And it is rumoured he formulated is mind boggling theories when he played his favourite piece</string>
+
+
+
+    <string name="title_slide_2">Eureka</string>
+    <string name="desc_slide_2">Modern science have proven that engaging in arts (Music) strengthens right hemisphere of the brain, thus improving intelligence </string>
+
+
+
+    <string name="title_slide_3">Serenity</string>
+    <string name="desc_slide_3">We provide a serene environment, that is secure and conducive for learning </string>
+
+
+    <string name="drei1_title">Introduction and Orientation</string>
+    <string name="drei1_context">The students are taken on a brief tour around the venue, after that they are introduced to the various tutors and personnel present. Each student would be placed in groups of three based on the chosen instrument </string>
+
+    <string name="drei2_title">History of music</string>
+    <string name="drei2_context">This segment comprises of a detailed lecture of the various musical movement and their initiators. They are introduced to the various genre of music and its underlining mechanics     </string>
+
+    <string name="drei3_title">Musical Notation</string>
+    <string name="drei3_context">In this segment the students are taught the intricacies of musical notation its workings and importance. They would be taught how to read and write basic musical pieces    </string>
+
+    <string name="drei4_title">Scales and  Melodies</string>
+    <string name="drei4_context">This segment  </string>
+
+    <string name="drei5_title">Phrase construction</string>
+    <string name="drei5_context">content required </string>
+
+    <string name="drei6_title">Rhythm</string>
+    <string name="drei6_context">briefing about rhtymns  </string>
+
+    <string name="drei7_title">Tertian harmony </string>
+    <string name="drei7_context">brief about harmony </string>
+
+    <string name="drei8_title">Non-tertian harmony </string>
+    <string name="drei8_context">brief about tertian harmony </string>
+
+    <string name="drei9_title">Form</string>
+    <string name="drei9_context">scholarly </string>
+
+    <string name="drei10_title">Orchestration</string>
+    <string name="drei10_context">The students are required to give two presentations ones based on the classical arts and the other based on African contemporary arts </string>
+
+    <string name="private_tutoring">Services </string>
+    <string name="private_context">We offer private tutelage, music as a services, musical camps and workshops. We are poised in bringing quality and efficiency to suite your musical needs </string>
+
+    <string name="info">Information </string>
+    <string name="info_context">Symphony is a project by world sech inc. all rights reserved   </string>
+
+<!-- payment paystack-->
+    <string name="card_number">Card number</string>
+    <string name="cvv">CVV</string>
+    <string name="mm">MM</string>
+    <string name="yyyy">YYYY</string>
+    <string name="no_transaction_yet">No transaction yet</string>
+    <string name="cvv_sample">e.g 576</string>
+    <string name="pay"> Pay</string>
+    <string name="Name">Name</string>
+
+    <string name="test_publicKey">pk_live_9cf505901e01a7ff0b890f18270d109b88aa977e</string>
+    <string name="test_secretKey">sk_live_9d142b523110b975837456dd6d14b2cd874aaeba</string>
+
+
+
+    <!--res protect-->
+    <string name="ok_button">OK</string>
+    <string name="invalid">Invalid password</string>
+
+
+</resources>

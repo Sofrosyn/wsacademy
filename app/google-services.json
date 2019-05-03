@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "810892324601",
+    "firebase_url": "https://symphony-ff726.firebaseio.com",
+    "project_id": "symphony-ff726",
+    "storage_bucket": "symphony-ff726.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810892324601:android:21e296f49b8ee657",
+        "android_client_info": {
+          "package_name": "sofrosyn.tech.com.orpheus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810892324601-qecfa5g26sl91lgi59antk6iiv8s6sta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoLvwRpoRSNJQ8x5hsGjQ7Zkh5oj_QKYY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:layout_margin="4dp"
+                                    app:cardCornerRadius="4dp">
+
+	<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+		<TextView android:layout_width="wrap_content"
+		          android:layout_height="wrap_content"
+					android:text="@string/subjects"
+						android:textStyle="bold"
+						android:textSize="16sp"
+                  android:layout_marginLeft="4dp"
+							android:id="@+id/subject_feed"/>
+		<TextView android:layout_width="wrap_content"
+		          android:layout_height="wrap_content" android:id="@+id/date_feed"
+		          android:layout_alignParentRight="true"
+		          android:layout_marginRight="4dp"
+		          android:text="date" android:layout_alignParentEnd="true" android:layout_marginEnd="4dp"/>
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="message" android:layout_below="@id/subject_feed" android:layout_marginLeft="4dp"
+				  android:gravity="start" android:maxLines="4" android:id="@+id/message_feed"/>
+	</RelativeLayout>
+</android.support.v7.widget.CardView>

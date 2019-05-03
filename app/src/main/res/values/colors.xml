@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="colorPrimary">#d4af37 </color>
+	<color name="colorPrimaryDark">#ffa000</color>
+	<color name="colorAccent">#8bc34a</color>
+
+
+	<color name="drei1">#d4af37 </color>
+	<color name="drei2">#ffa000</color>
+	<color name="drei3">#8bc34a</color>
+	<color name="drei4">#3cff00</color>
+
+	<color name="error">#ff0d00</color>
+	<color name="background">#A9A9A9 </color>
+	<!---dots active colors -->
+	<color name="dot_active">#e7c608</color>
+	<!--dots inactive colors -->
+	<color name="dot_inactive">#ed3a0d</color>
+
+	<!-- cologen-->
+	<color name="ball_1">#e60f03</color>
+	<color name="ball_2">#0407cc</color>
+	<color name="ball_3">#e4b703</color>
+	<color name="ball_4">#3cde07</color>
+	<color name="ball_5">#1a0702</color>
+</resources>

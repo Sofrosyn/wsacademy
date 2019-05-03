@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                tools:context=".CurriculumActivity">
+
+	<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/line1"
+	              android:orientation="vertical">
+
+		<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+		              android:orientation="horizontal" android:layout_gravity="right" >
+			<TextView android:layout_width="wrap_content" android:textStyle="bold"
+			          android:text="@string/Time" android:textSize="12sp"
+			          android:layout_height="wrap_content" android:fontFamily="sans-serif"/>
+
+			<TextView android:layout_width="wrap_content" android:text="@string/day" android:textSize="12sp"
+			          android:layout_height="wrap_content" android:fontFamily="serif"/>
+		</LinearLayout>
+
+
+		<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+		              android:orientation="horizontal" android:layout_marginTop="10dp">
+			<TextView android:layout_width="wrap_content" android:textStyle="bold"
+			          android:text="@string/title" android:textSize="15sp" android:id="@+id/CurriculumTitle"
+			          android:layout_height="wrap_content" android:fontFamily="sans-serif"/>
+
+
+
+
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4dp"
+		              android:orientation="horizontal" android:layout_marginTop="12dp">
+			<TextView android:layout_width="wrap_content" android:textStyle="bold"
+			          android:text="@string/concept" android:textSize="12sp"
+			          android:layout_height="wrap_content" android:fontFamily="sans-serif"/>
+
+			<TextView android:layout_width="wrap_content" android:text="@string/brief" android:id="@+id/CurriculumConcept"
+			          android:textSize="12sp" android:layout_marginLeft="4dp" android:layout_marginRight="4dp"
+			          android:layout_height="wrap_content" android:fontFamily="serif" android:layout_gravity="left"/>
+		</LinearLayout>
+
+	</LinearLayout>
+	<View android:layout_width="match_parent" android:layout_height="2dp" android:layout_below="@id/line1"/>
+
+
+
+
+<ScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_below="@id/line1" android:layout_marginTop="10dp"    android:layout_centerHorizontal="true">
+	<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+	              android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:layout_gravity="center"
+	              android:layout_marginTop="25dp">
+		<GridLayout android:layout_width="wrap_content" android:orientation="vertical" android:rowCount="4" android:columnCount="3"
+		            android:layout_height="match_parent"    android:rowOrderPreserved="true">
+
+			<android.support.v7.widget.CardView android:layout_height="wrap_content" app:cardCornerRadius="8dp" app:cardElevation="10dp"
+			                       android:id="@+id/drei1"             android:layout_width="wrap_content" app:cardBackgroundColor="@color/drei1">
+<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+
+	<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+	          android:textSize="20sp" android:textStyle="bold" android:fontFamily="serif"
+	          android:layout_height="wrap_content" android:text="Class 1 "/>
+
+	<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+	           android:layout_gravity="center" android:src="@drawable/ic_style_black_24dp"/>
+
+	<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+	          android:textSize="15sp" android:textStyle="italic" android:fontFamily="serif"
+	          android:layout_height="wrap_content" android:text="Tour"/>
+</LinearLayout>
+			</android.support.v7.widget.CardView>
+
+
+
+
+			<android.support.v7.widget.CardView android:layout_height="wrap_content" app:cardCornerRadius="8dp" app:cardElevation="10dp"
+			                                    android:layout_width="wrap_content" android:id="@+id/drei4" app:cardBackgroundColor="@color/drei2">
+				<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="20sp" android:textStyle="bold" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Class 4 "/>
+
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+					           android:layout_gravity="center" android:src="@drawable/ic_style_black_24dp"/>
+
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="15sp" android:textStyle="italic" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Melody"/>
+				</LinearLayout>
+			</android.support.v7.widget.CardView>
+
+
+
+			<android.support.v7.widget.CardView android:layout_height="wrap_content" app:cardCornerRadius="8dp" app:cardElevation="10dp"
+			                                    android:layout_width="wrap_content" android:id="@+id/drei7" app:cardBackgroundColor="@color/drei3">
+				<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="20sp" android:textStyle="bold" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Class 7 "/>
+
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+					           android:layout_gravity="center" android:src="@drawable/ic_style_black_24dp"/>
+
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="15sp" android:textStyle="italic" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Harmony"/>
+				</LinearLayout>
+			</android.support.v7.widget.CardView>
+
+
+			<android.support.v7.widget.CardView android:layout_height="wrap_content" app:cardCornerRadius="8dp" app:cardElevation="10dp"
+			                                    android:layout_width="wrap_content" android:id="@+id/drie10" app:cardBackgroundColor="@color/drei3">
+				<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="20sp" android:textStyle="bold" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Class 10 "/>
+
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+					           android:layout_gravity="center" android:src="@drawable/ic_style_black_24dp"/>
+
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="15sp" android:textStyle="italic" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Orchestra"/>
+				</LinearLayout>
+			</android.support.v7.widget.CardView>
+
+
+
+			<android.support.v7.widget.CardView android:layout_height="wrap_content" app:cardCornerRadius="8dp" app:cardElevation="10dp"
+			                                    android:layout_width="wrap_content" android:id="@+id/drei2" app:cardBackgroundColor="@color/drei1">
+				<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="20sp" android:textStyle="bold" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Class 2 "/>
+
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+					           android:layout_gravity="center" android:src="@drawable/ic_style_black_24dp"/>
+
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="15sp" android:textStyle="italic" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Grouping"/>
+				</LinearLayout>
+			</android.support.v7.widget.CardView>
+
+
+
+			<android.support.v7.widget.CardView android:layout_height="wrap_content" app:cardCornerRadius="8dp" app:cardElevation="10dp"
+			                                    android:layout_width="wrap_content" android:id="@+id/drei5" app:cardBackgroundColor="@color/drei2" >
+				<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="20sp" android:textStyle="bold" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Class 5 "/>
+
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+					           android:layout_gravity="center" android:src="@drawable/ic_style_black_24dp"/>
+
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="15sp" android:textStyle="italic" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Melody"/>
+				</LinearLayout>
+			</android.support.v7.widget.CardView>
+
+
+
+			<android.support.v7.widget.CardView android:layout_height="wrap_content" app:cardCornerRadius="8dp" app:cardElevation="10dp"
+			                                    android:layout_width="wrap_content" android:id="@+id/drei8" app:cardBackgroundColor="@color/drei3">
+				<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="20sp" android:textStyle="bold" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Class 8 "/>
+
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+					           android:layout_gravity="center" android:src="@drawable/ic_style_black_24dp"/>
+
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="15sp" android:textStyle="italic" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Harmony"/>
+				</LinearLayout>
+			</android.support.v7.widget.CardView>
+
+
+
+			<android.support.v7.widget.CardView android:layout_height="wrap_content" app:cardCornerRadius="8dp" app:cardElevation="10dp"
+			                                    android:layout_width="wrap_content" android:id="@+id/drie11" app:cardBackgroundColor="@color/drei3">
+				<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="20sp" android:textStyle="bold" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Private"/>
+
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+					           android:layout_gravity="center" android:src="@drawable/ic_style_black_24dp"/>
+
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="15sp" android:textStyle="italic" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Services"/>
+				</LinearLayout>
+			</android.support.v7.widget.CardView>
+
+
+
+			<android.support.v7.widget.CardView android:layout_height="wrap_content" app:cardCornerRadius="8dp" app:cardElevation="10dp"
+			                                    android:layout_width="wrap_content" android:id="@+id/drei3" app:cardBackgroundColor="@color/drei1">
+				<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="20sp" android:textStyle="bold" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Class 3 "/>
+
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+					           android:layout_gravity="center" android:src="@drawable/ic_style_black_24dp"/>
+
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="15sp" android:textStyle="italic" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Basics"/>
+				</LinearLayout>
+			</android.support.v7.widget.CardView>
+
+
+			<android.support.v7.widget.CardView android:layout_height="wrap_content" app:cardCornerRadius="8dp" app:cardElevation="10dp"
+			                                    android:layout_width="wrap_content" android:id="@+id/drei6" app:cardBackgroundColor="@color/drei2">
+				<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="20sp" android:textStyle="bold" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Class 6 "/>
+
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+					           android:layout_gravity="center" android:src="@drawable/ic_style_black_24dp"/>
+
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="15sp" android:textStyle="italic" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Melody"/>
+				</LinearLayout>
+			</android.support.v7.widget.CardView>
+
+
+
+			<android.support.v7.widget.CardView android:layout_height="wrap_content" app:cardCornerRadius="8dp" app:cardElevation="10dp"
+			                                    android:layout_width="wrap_content" android:id="@+id/drei9" app:cardBackgroundColor="@color/drei3">
+				<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="20sp" android:textStyle="bold" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Class 9 "/>
+
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+					           android:layout_gravity="center" android:src="@drawable/ic_style_black_24dp"/>
+
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="15sp" android:textStyle="italic" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Harmony"/>
+				</LinearLayout>
+			</android.support.v7.widget.CardView>
+
+
+
+			<android.support.v7.widget.CardView android:layout_height="wrap_content" app:cardCornerRadius="8dp" app:cardElevation="10dp"
+			                                    android:layout_width="wrap_content" android:id="@+id/drei12" app:cardBackgroundColor="@color/drei3">
+				<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="20sp" android:textStyle="bold" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Detail "/>
+
+					<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+					           android:layout_gravity="center" android:src="@drawable/ic_style_black_24dp"/>
+
+					<TextView android:layout_width="wrap_content" android:gravity="center" android:layout_gravity="center"
+					          android:textSize="15sp" android:textStyle="italic" android:fontFamily="serif"
+					          android:layout_height="wrap_content" android:text="Info"/>
+				</LinearLayout>
+			</android.support.v7.widget.CardView>
+
+
+		</GridLayout>
+<!-- TODO: develop content for the remaining classes   -->
+
+	</LinearLayout>
+</ScrollView>
+</RelativeLayout>
