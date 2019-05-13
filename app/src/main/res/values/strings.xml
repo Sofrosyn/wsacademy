@@ -156,14 +156,16 @@
     <string name="pay"> Pay</string>
     <string name="Name">Name</string>
 
-    <string name="test_publicKey">pk_live_9cf505901e01a7ff0b890f18270d109b88aa977e</string>
-    <string name="test_secretKey">sk_live_9d142b523110b975837456dd6d14b2cd874aaeba</string>
 
 
 
     <!--res protect-->
     <string name="ok_button">OK</string>
     <string name="invalid">Invalid password</string>
+<!-- paystack key-->
+    <string name="test_publicKey">pk_test_da78928a39808291ebd919eb9cb2814edb7f62a7</string>
+    <string name="test_secretkey">sk_test_7a246e34c4facec8aae3983cdda9b0a28872f6b3</string>
+
 
 
 </resources>

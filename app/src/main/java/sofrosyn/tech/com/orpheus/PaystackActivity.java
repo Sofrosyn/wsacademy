@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import co.paystack.android.Paystack;
@@ -31,7 +32,8 @@ public class PaystackActivity extends AppCompatActivity {
 
     private final String email  = "wsbootcamp@gmail.com";
     private FirebaseAuth mAuth;
-
+    private TextView message;
+    private static final String TAG="WSACADEMY LOGGER";
     private DatabaseReference mDataref;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,33 +41,28 @@ public class PaystackActivity extends AppCompatActivity {
 
         //initialize paystack
         PaystackSdk.initialize(getApplicationContext());
-
+//        PaystackSdk.setPublicKey(getResources().getString(R.string.test_publicKey));
         setContentView(R.layout.payment_transaction_layout);
 
     //inintalize firebase authentication
     mAuth=FirebaseAuth.getInstance();
     //initialize firebase database
     mDataref=FirebaseDatabase.getInstance().getReference();
-   pay = findViewById(R.id.payPaystack);
-//    name = findViewById(R.id.pay_name);
-   // insrtument= findViewById(R.id.pay_instrument);
-   // cost= findViewById(R.id.pay_cost);
-    cardNumber= findViewById(R.id.cardNumber);
+   pay = findViewById(R.id.paystack_pay);
+//
+        message = findViewById(R.id.paystack_message);
+        cardNumber= findViewById(R.id.cardNumber);
     month= findViewById(R.id.expMonth);
     year= findViewById(R.id.expYear);
     cvv= findViewById(R.id.cvvNumber);
-    progressBar = findViewById(R.id.paystackProgress);
+
 
     Intent receive = getIntent();
     String nameIntent = receive.getStringExtra("name");
     String instrumentIntent = receive.getStringExtra("choice");
     String costIntent = receive.getStringExtra("payment");
 
-  //  name.setText(nameIntent);
-   // insrtument.setText(instrumentIntent);
-  //  cost.setText(costIntent);
-
-    pay.setOnClickListener((v)->{
+pay.setOnClickListener((v)->{
 
         if(!validate()){return;}
 
@@ -76,23 +73,24 @@ public class PaystackActivity extends AppCompatActivity {
             Syear = Integer.parseInt(year.getText().toString().trim());
 
             card= new Card(ScardNumber,Smonth,Syear,Scvv);
-            String cardType = card.getType();
+
+            // String cardType = card.getType();
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-            alertDialog.setMessage(nameIntent +"/n"+instrumentIntent+"/n"+ costIntent+"/n"+cardType);
+            alertDialog.setMessage(nameIntent +"/n"+instrumentIntent+"/n"+ costIntent);
             alertDialog.setTitle("Attention");
             alertDialog.setIcon(R.drawable.idea);
 alertDialog.setPositiveButton("Yes", (dialog, which) -> {
              if(card.isValid()){
-        progressBar.setVisibility(View.VISIBLE);
+
 
         performCharge();
 
         makeToast("the card has been debited successfully");
-    }progressBar.setVisibility(View.INVISIBLE);
+    }
 });
  alertDialog.setNegativeButton("No",((dialog, which) -> {}));
 }catch(Exception e){e.printStackTrace();}
-    });
+        });
     }
 
 // editfield validation
@@ -129,13 +127,16 @@ alertDialog.setPositiveButton("Yes", (dialog, which) -> {
        charge.setEmail(email);
        charge.setAmount(Integer.parseInt(cost.getText().toString().trim()));
        PaystackSdk.chargeCard(PaystackActivity.this, charge, new Paystack.TransactionCallback() {
+
            @Override
            public void onSuccess(Transaction transaction) {
             String userId = mAuth.getUid();
-            mDataref.child("Transaction").child(userId).setValue(transaction.getReference());
-               makeToast("stored in firebase");
+            //mDataref.child("Transaction").child(userId).setValue(transaction.getReference());
+
             progressBar.setVisibility(View.INVISIBLE);
-            makeToast("Transaction successful");
+            makeToast(transaction.getReference());
+               Log.v(TAG,transaction.getReference());
+               message.setText(transaction.getReference());
            }
 
            @Override
@@ -145,7 +146,12 @@ alertDialog.setPositiveButton("Yes", (dialog, which) -> {
 
            @Override
            public void onError(Throwable error, Transaction transaction) {
-                makeToast("transaction Unsuccessful");
+               message.setText(transaction.getReference());
+               message.setText(error.getMessage());
+
+
+               Log.v(TAG,error.getMessage());
+               Log.v(TAG,transaction.getReference());
            }
        });
 
@@ -158,12 +164,12 @@ private void makeToast(String message){
 }
 
 
-// TODO: add paystack public key to manifest
+
 
 
     @Override
     protected void onResume() {
         super.onResume();
-        progressBar.setVisibility(View.GONE);
+
     }
 }

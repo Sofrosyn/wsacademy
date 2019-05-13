@@ -12,26 +12,31 @@ import sofrosyn.tech.com.orpheus.modals.Feeds;
 
 import java.util.List;
 
-public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder> {
+public class FeedsAdapter extends
+        RecyclerView.Adapter<FeedsAdapter.MyViewHolder> {
 
     private List<Feeds> feedsList;
     private Context context;
 
-    public FeedsAdapter(List<Feeds> feedsList,Context context){
+    public FeedsAdapter(List<Feeds> feedsList, Context context){
         this.feedsList =feedsList;
         this.context = context;
     }
 
+
     @NonNull
     @Override
-    public FeedsAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.feeds_layout,viewGroup,false);
-        MyViewHolder myViewHolder = new MyViewHolder(view);
-        return myViewHolder;
+    public FeedsAdapter.MyViewHolder
+        onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.feeds_layout,viewGroup,false);
+        return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void
+        onBindViewHolder(MyViewHolder holder, int position) {
+
         Feeds feeds = feedsList.get(position);
         holder.subject.setText(feeds.getSubject());
         holder.message.setText(feeds.getMessage());
@@ -40,35 +45,12 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.MyViewHolder
 
     @Override
     public int getItemCount() {
-
-        int arr = 0;
-
-        try{
-            if(feedsList.size()==0){
-
-                arr = 0;
-
-            }
-            else{
-
-                arr=feedsList.size();
-            }
-
-
-
-        }catch (Exception e){
-
-         e.printStackTrace();
-
-        }
-        return arr;
-
-        }
+return feedsList.size();
+    }
 
 
     class MyViewHolder extends RecyclerView.ViewHolder{
         TextView subject,message,time;
-
 
         public MyViewHolder(View itemView) {
             super(itemView);

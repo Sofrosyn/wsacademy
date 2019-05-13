@@ -37,6 +37,7 @@ public class LoginActivity extends BaseActivity {
         // check if user is logged in
         if(mAuth.getCurrentUser() != null){
             startActivity(new Intent(this, MainActivity.class));
+            finish();
         }
 
         setContentView(R.layout.layout_signin);
@@ -52,7 +53,7 @@ public class LoginActivity extends BaseActivity {
 
         resetPassword.setOnClickListener((v -> {
             startActivity(new Intent(LoginActivity.this,ResetPasswordActivity.class));
-            overridePendingTransition(R.anim.right_in,R.anim.left_out);
+            overridePendingTransition(R.anim.right_in,R.anim.left_out);finish();
         }));
            }
 

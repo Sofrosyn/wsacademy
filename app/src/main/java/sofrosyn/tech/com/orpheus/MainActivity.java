@@ -57,7 +57,7 @@ private FirebaseAuth auth;
                 touch++;
                 Toast.makeText(MainActivity.this,Integer.toString(touch),Toast.LENGTH_SHORT).show();
                 if(touch==5){
-                    startActivity(new Intent(MainActivity.this,ControllerActivity.class));
+                    startActivity(new Intent(MainActivity.this,AdminActivity.class));
                     finish();} return  true;}
 
             if(id == R.id.signout){
