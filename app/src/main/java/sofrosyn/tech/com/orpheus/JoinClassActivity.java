@@ -64,9 +64,9 @@ private final String classNode= "JoinClass";
 
                 String choice = owner.getSelectedItem().toString();
                 if(choice.equals("Yes")){
-                    cost.setText("30,000");
+                    cost.setText("20,000");
                 }else
-                { cost.setText("40,000");}
+                { cost.setText("30,000");}
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -82,6 +82,7 @@ private final String classNode= "JoinClass";
         proceed.setOnClickListener((v)-> {
     if (!validateForm()) { return; }
     progressBar.setVisibility(View.VISIBLE);
+
 Intent pass = new Intent(JoinClassActivity.this,PaystackActivity.class);
     String name = firstName.getText().toString();
     String last= lastName.getText().toString();
@@ -93,6 +94,8 @@ Intent pass = new Intent(JoinClassActivity.this,PaystackActivity.class);
 commitToFirebase();
     Toast.makeText(this,"Payment activity",LENGTH_SHORT).show();
     startActivityForResult(pass,1);
+
+  startActivity(new Intent(this,TranferActivity.class));
 } );
 
 

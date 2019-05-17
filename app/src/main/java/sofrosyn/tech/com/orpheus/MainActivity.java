@@ -3,19 +3,26 @@ package sofrosyn.tech.com.orpheus;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.*;
 
 
 public class MainActivity extends AppCompatActivity {
-private CardView joinClass, curriculum, feeds,bootCamp;
+private CardView joinClass, curriculum, feeds,bootCamp,profile;
 private int touch;
 private FirebaseAuth auth;
+private DatabaseReference mDatabasereference;
+private ImageView notification;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,14 +37,17 @@ private FirebaseAuth auth;
     curriculum = findViewById(R.id.Curriculum);
     feeds = findViewById(R.id.feed);
     bootCamp = findViewById(R.id.bootCamp);
-
+    profile = findViewById(R.id.profile);
+    notification = findViewById(R.id.notification_icon);
+   mDatabasereference = FirebaseDatabase.getInstance().getReference();
 
 
         joinClass.setOnClickListener((v)-> startActivity(new Intent(this, JoinClassActivity.class  )));
     curriculum.setOnClickListener((v)-> startActivity(new Intent(this, CurriculumActivity.class)));
-        feeds.setOnClickListener((v)-> startActivity(new Intent(this, FeedsActivity.class  )));
+        feeds.setOnClickListener((v)->{ startActivity(new Intent(this, FeedsActivity.class  )); notification.setVisibility(View.INVISIBLE);});
         bootCamp.setOnClickListener((v)-> startActivity(new Intent(this, BootCampActivity.class)));
-
+        profile.setOnClickListener((v)-> startActivity(new Intent(this, ProfileActivity.class)));
+        notification.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -55,8 +65,8 @@ private FirebaseAuth auth;
 
             if(id == R.id.lock){
                 touch++;
-                Toast.makeText(MainActivity.this,Integer.toString(touch),Toast.LENGTH_SHORT).show();
-                if(touch==5){
+//                Toast.makeText(MainActivity.this,Integer.toString(touch),Toast.LENGTH_SHORT).show();
+                if(touch==2){
                     startActivity(new Intent(MainActivity.this,AdminActivity.class));
                     finish();} return  true;}
 
@@ -86,7 +96,37 @@ private FirebaseAuth auth;
         startActivity(intent);    }
 
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+mDatabasereference.child("Feeds").addChildEventListener(new ChildEventListener() {
+    @Override
+    public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+        notification.setVisibility(View.VISIBLE);
+    }
 
+    @Override
+    public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+    }
+
+    @Override
+    public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+    }
+
+    @Override
+    public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+    }
+});
+
+    }
 }
 
 

@@ -1,19 +1,21 @@
 <resources>
-    <string name="app_name">Wsacademy</string>
+    <string name="app_name">Symphony</string>
 
     <!-- Main -->
     <string name="join_class">Join a Class</string>
     <string name="BootCamp">Boot camp</string>
     <string name="Feeds">Feeds</string>
     <string name="Curriculum">Curriculum</string>
+    <string name="user_profile">Profile</string>
+
 
     <string name="developer">Developer</string>
 
     <string name="classDesc">Click and begin your journey into the world of music</string>
     <string name="bootCampDesc">Reserve a seat at our annual musical Bootcamp</string>
     <string name="feedDesc">Get the latest updates from our team</string>
-    <string name="CurriculumDesc">Order of events for our classes</string>\
-
+    <string name="CurriculumDesc">Order of events for our classes</string>
+    <string name="ProfileDesc">View and edit your profile</string>
 
 
 
@@ -166,6 +168,9 @@
     <string name="test_publicKey">pk_test_da78928a39808291ebd919eb9cb2814edb7f62a7</string>
     <string name="test_secretkey">sk_test_7a246e34c4facec8aae3983cdda9b0a28872f6b3</string>
 
-
+    <!--res splash-->
+    <string name="ws">WS</string>
+    <string name="academy">Academy</string>
+    <string name="motto">for the love of music</string>
 
 </resources>

@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class PaystackActivity extends AppCompatActivity {
     private EditText cardNumber, month, year, cvv;
-    private TextView name, insrtument, cost;
+    private String costIntent,instrumentIntent, nameIntent;
     private Button pay;
     private ProgressBar progressBar;
     private String ScardNumber,Scvv;
@@ -41,30 +41,36 @@ public class PaystackActivity extends AppCompatActivity {
 
         //initialize paystack
         PaystackSdk.initialize(getApplicationContext());
-//        PaystackSdk.setPublicKey(getResources().getString(R.string.test_publicKey));
+
+        PaystackSdk.setPublicKey(getResources().getString(R.string.test_publicKey));
+
         setContentView(R.layout.payment_transaction_layout);
 
     //inintalize firebase authentication
     mAuth=FirebaseAuth.getInstance();
     //initialize firebase database
     mDataref=FirebaseDatabase.getInstance().getReference();
-   pay = findViewById(R.id.paystack_pay);
-//
-        message = findViewById(R.id.paystack_message);
-        cardNumber= findViewById(R.id.cardNumber);
+
+    pay = findViewById(R.id.paystack_pay);
+
+    message = findViewById(R.id.paystack_message);
+
+    cardNumber= findViewById(R.id.cardNumber);
     month= findViewById(R.id.expMonth);
     year= findViewById(R.id.expYear);
     cvv= findViewById(R.id.cvvNumber);
 
+    progressBar = findViewById(R.id.paystack_progressbar);
 
     Intent receive = getIntent();
-    String nameIntent = receive.getStringExtra("name");
-    String instrumentIntent = receive.getStringExtra("choice");
-    String costIntent = receive.getStringExtra("payment");
+    nameIntent = receive.getStringExtra("name");
+    instrumentIntent = receive.getStringExtra("choice");
+    costIntent = receive.getStringExtra("payment");
 
 pay.setOnClickListener((v)->{
 
         if(!validate()){return;}
+    progressBar.setVisibility(View.VISIBLE);
 
         try{
             ScardNumber = cardNumber.getText().toString().trim();
@@ -76,19 +82,18 @@ pay.setOnClickListener((v)->{
 
             // String cardType = card.getType();
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-            alertDialog.setMessage(nameIntent +"/n"+instrumentIntent+"/n"+ costIntent);
+            alertDialog.setMessage(nameIntent +" /n"+instrumentIntent+" /n"+ costIntent);
             alertDialog.setTitle("Attention");
             alertDialog.setIcon(R.drawable.idea);
-alertDialog.setPositiveButton("Yes", (dialog, which) -> {
+            alertDialog.setPositiveButton("Yes", (dialog, which) -> {
              if(card.isValid()){
-
 
         performCharge();
 
-        makeToast("the card has been debited successfully");
+
     }
 });
- alertDialog.setNegativeButton("No",((dialog, which) -> {}));
+ alertDialog.setNegativeButton("No",((dialog, which) -> { }));
 }catch(Exception e){e.printStackTrace();}
         });
     }
@@ -125,17 +130,17 @@ alertDialog.setPositiveButton("Yes", (dialog, which) -> {
        charge = new Charge();
        charge.setCard(card);
        charge.setEmail(email);
-       charge.setAmount(Integer.parseInt(cost.getText().toString().trim()));
+       charge.setAmount(Integer.parseInt(costIntent));
        PaystackSdk.chargeCard(PaystackActivity.this, charge, new Paystack.TransactionCallback() {
 
            @Override
            public void onSuccess(Transaction transaction) {
             String userId = mAuth.getUid();
             //mDataref.child("Transaction").child(userId).setValue(transaction.getReference());
-
+               makeToast("the card has been debited successfully");
             progressBar.setVisibility(View.INVISIBLE);
             makeToast(transaction.getReference());
-               Log.v(TAG,transaction.getReference());
+               Log.i(TAG,transaction.getReference());
                message.setText(transaction.getReference());
            }
 
@@ -146,12 +151,13 @@ alertDialog.setPositiveButton("Yes", (dialog, which) -> {
 
            @Override
            public void onError(Throwable error, Transaction transaction) {
+               progressBar.setVisibility(View.INVISIBLE);
                message.setText(transaction.getReference());
                message.setText(error.getMessage());
 
 
-               Log.v(TAG,error.getMessage());
-               Log.v(TAG,transaction.getReference());
+               Log.i(TAG,error.getMessage());
+               Log.i(TAG,transaction.getReference());
            }
        });
 
@@ -170,6 +176,7 @@ private void makeToast(String message){
     @Override
     protected void onResume() {
         super.onResume();
+        progressBar.setVisibility(View.INVISIBLE);
 
     }
 }
